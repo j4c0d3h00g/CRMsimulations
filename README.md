@@ -8,4 +8,5 @@ This repository contains simulation studies where the performance of cellwise ro
 - `CRM_simulation_contamination_situation1.R`: evaluates the breakdown behavior of CRM using different weight functions. Here, only the amount of casewise contamination is increased.
 - `CRM_simulation_contamination_situation2.R`: evaluates the breakdown behavior of CRM using different weight functions. Here, only the amount of cellwise contamination is increased.
 - `CRM_simulation_contamination_situation3.R`: evaluates the breakdown behavior of CRM using different weight functions. Here, both the amount of casewise and cellwise contamination is increased.
-- `CRM_simulation_alpha.R`: evaluates whether the robustness of the CRM regression estimator can increase when the parameters for the weight functions are lowered. 
+- `CRM_simulation_alpha.R`: evaluates whether the robustness of the CRM regression estimator can increase when the parameters for the weight functions are lowered.
+- `CRM_simulation_realdata.R`: evaluates the predictive performance of CRM using different weight functions in a real data application. To illustrate how CRM regression works in practice, a cellwise heatmap that shows which values are imputed for the outlying cells is included for CRM using the Hampel weight function. 
