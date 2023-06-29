@@ -298,14 +298,14 @@ for (k in 1:nfolds) {
   pred_test_crm_gauss       <- predict(crm_gauss_train,      newdata = test)
   pred_test_crm_quadratic   <- predict(crm_quadratic_train,  newdata = test)
   
-  RMSE$'CRM-Hampel'[k]      <- sqrt(mean((test$log.cholesterol - pred_test_crm_hampel)^2,     trim = 0.15))
-  RMSE$'CRM-Tukey'[k]       <- sqrt(mean((test$log.cholesterol - pred_test_crm_tukey)^2,      trim = 0.15))
-  RMSE$'CRM-Huber'[k]       <- sqrt(mean((test$log.cholesterol - pred_test_crm_huber)^2,      trim = 0.15))
-  RMSE$'CRM-Gauss'[k]       <- sqrt(mean((test$log.cholesterol - pred_test_crm_gauss)^2,      trim = 0.15))
-  RMSE$'CRM-Quadratic'[k]   <- sqrt(mean((test$log.cholesterol - pred_test_crm_quadratic)^2,  trim = 0.15))
+  RMSE$'CRM-Hampel'[k]      <- sqrt(mean((test$log.cholesterol - pred_test_crm_hampel)^2,     trim = 0.1))
+  RMSE$'CRM-Tukey'[k]       <- sqrt(mean((test$log.cholesterol - pred_test_crm_tukey)^2,      trim = 0.1))
+  RMSE$'CRM-Huber'[k]       <- sqrt(mean((test$log.cholesterol - pred_test_crm_huber)^2,      trim = 0.1))
+  RMSE$'CRM-Gauss'[k]       <- sqrt(mean((test$log.cholesterol - pred_test_crm_gauss)^2,      trim = 0.1))
+  RMSE$'CRM-Quadratic'[k]   <- sqrt(mean((test$log.cholesterol - pred_test_crm_quadratic)^2,  trim = 0.1))
 }
 
-boxplot(RMSE, ylab = "15% trimmed RMSEP", col = "olivedrab4",
+boxplot(RMSE, ylab = "10% trimmed RMSEP", col = "olivedrab4",
         ylim = c(0, max(RMSE)), cex.lab = 1.4, cex.axis = 1.4, cex.main = 2)
 points(colMeans(RMSE), pch = 18, cex = 1.5)
 text(rep(0, ncol(RMSE)), labels = round(colMeans(RMSE), 4), cex = 2,
