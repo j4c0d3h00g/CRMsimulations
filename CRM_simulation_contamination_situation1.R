@@ -413,5 +413,5 @@ tmp %>%
     plot.title = element_text(size=14),
     panel.grid = element_blank()
   ) +
-  ylab("Average MAE") + xlab("% casewise outliers") +
+  ylab("Average MAE") + xlab("% casewise contamination") +
   facet_wrap(~factor(crm_function, levels = c("CRM-Hampel-norm", "CRM-Hampel", "CRM-Tukey", "CRM-Huber", "CRM-Gauss", "CRM-Quadratic")))
