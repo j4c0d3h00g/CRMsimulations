@@ -301,7 +301,7 @@ MAE_matrix_quadratic <- data.frame(pct_case_out = rep(100 * results_MAE_quadrati
 MAE_matrix <- rbind(MAE_matrix_hampel, MAE_matrix_tukey, MAE_matrix_huber, MAE_matrix_gauss, MAE_matrix_quadratic)
 
 # Plot the average MAE for different alpha values for the different weight functions used in CRM - - - 
-plot_MAE <- MAE_matrix %>%
+MAE_matrix %>%
   ggplot(aes(x = pct_case_out, y = average_MAE, group = alpha_value)) +
   geom_line(aes(color = alpha_value), size = 1) +
   scale_color_viridis(discrete = TRUE) +
